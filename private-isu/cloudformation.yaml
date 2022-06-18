@@ -63,7 +63,7 @@ Resources:
           Fn::Base64: |
             #!/bin/bash
             curl https://raw.githubusercontent.com/yuyamada/isucon/main/private-isu/userdata.sh /home/ubuntu/userdata.sh && sudo bash /home/ubuntu/userdata.sh
-    AppInstance:
+  AppInstance:
     Type: AWS::EC2::Instance
     Properties:
       LaunchTemplate:
