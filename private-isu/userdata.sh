@@ -22,7 +22,7 @@ tar -zxvf alp.tar.gz
 install ./alp /usr/loal/bin
 
 # netdata
-curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh --non-interactive
+curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
 
 # neovim
 add-apt-repository ppa:neovim-ppa/stable && apt -y install neovim
