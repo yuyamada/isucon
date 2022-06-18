@@ -17,10 +17,12 @@ cd /home/ubuntu/query-digester && install query-digester /usr/local/bin
 apt -y install dstat
 
 # alp
-apt -y install alp
+wget https://github.com/tkuchiki/alp/releases/download/v1.0.9/alp_linux_amd64.tar.gz -O alp.tar.gz
+tar -zxvf alp.tar.gz
+install ./alp /usr/loal/bin
 
 # netdata
-curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
+curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh --non-interactive
 
 # neovim
 add-apt-repository ppa:neovim-ppa/stable && apt -y install neovim
