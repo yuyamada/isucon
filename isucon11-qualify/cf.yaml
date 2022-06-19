@@ -70,7 +70,6 @@ Resources:
         ImageId: ami-0796be4f4814fc3d5
         SecurityGroupIds:
           - !Ref SecurityGroup
-        SubnetId: !Ref Subnet
         KeyName: !Ref KeyPairName
         BlockDeviceMappings:
           - DeviceName: /dev/sda1
@@ -84,6 +83,7 @@ Resources:
         LaunchTemplateId: !Ref LaunchTemplate
         Version: !GetAtt LaunchTemplate.LatestVersionNumber
       InstanceType: c6i.xlarge
+      SubnetId: !Ref Subnet
       PrivateIpAddress: "192.168.0.10"
       Tags:
         - Key: Name
@@ -101,6 +101,7 @@ Resources:
         LaunchTemplateId: !Ref LaunchTemplate
         Version: !GetAtt LaunchTemplate.LatestVersionNumber
       InstanceType: c6i.large
+      SubnetId: !Ref Subnet
       PrivateIpAddress: "192.168.0.11"
       Tags:
         - Key: Name
@@ -117,6 +118,8 @@ Resources:
         LaunchTemplateId: !Ref LaunchTemplate
         Version: !GetAtt LaunchTemplate.LatestVersionNumber
       InstanceType: c6i.large
+      SubnetId: !Ref Subnet
+      PrivateIpAddress: "192.168.0.12"
       Tags:
         - Key: Name
           Value: isucon11-qualify-2
@@ -132,6 +135,7 @@ Resources:
         LaunchTemplateId: !Ref LaunchTemplate
         Version: !GetAtt LaunchTemplate.LatestVersionNumber
       InstanceType: c6i.large
+      SubnetId: !Ref Subnet
       PrivateIpAddress: "192.168.0.13"
       Tags:
         - Key: Name
