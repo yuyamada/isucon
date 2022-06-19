@@ -25,7 +25,7 @@ install ./alp /usr/loal/bin
 # curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
 
 # newrelic
-# curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo NEW_RELIC_API_KEY=xxxx NEW_RELIC_ACCOUNT_ID=xxxx /usr/local/bin/newrelic install
+curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo /usr/local/bin/newrelic install
 
 # neovim
 add-apt-repository ppa:neovim-ppa/stable && apt -y install neovim
