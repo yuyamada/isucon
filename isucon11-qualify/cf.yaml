@@ -58,22 +58,33 @@ Resources:
           CidrIp: "0.0.0.0/0"
         - IpProtocol: -1
           CidrIp: "192.168.0.0/24"
-
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateData:
+        InstanceMarketOptions:
+          MarketType: spot
+          SpotOptions:
+            InstanceInterruptionBehavior: stop
+            SpotInstanceType: persistent
+        ImageId: ami-0796be4f4814fc3d5
+        SecurityGroupIds:
+          - !Ref SecurityGroup
+        SubnetId: !Ref Subnet
+        KeyName: !Ref KeyPairName
+        BlockDeviceMappings:
+          - DeviceName: /dev/sda1
+            Ebs:
+              VolumeSize: 20
+              VolumeType: gp3
   BenchInstance:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-082201231e54507b9
-      InstanceType: c4.xlarge
-      SecurityGroupIds:
-        - !Ref SecurityGroup
-      SubnetId: !Ref Subnet
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      InstanceType: c6i.xlarge
       PrivateIpAddress: "192.168.0.10"
-      KeyName: !Ref KeyPairName
-      BlockDeviceMappings:
-        - DeviceName: /dev/sda1
-          Ebs:
-            VolumeSize: 20
-            VolumeType: gp3
       Tags:
         - Key: Name
           Value: isucon11-bench
@@ -86,18 +97,11 @@ Resources:
   QualifyInstance1:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0088b181798171356
-      InstanceType: c5.large
-      SecurityGroupIds:
-        - !Ref SecurityGroup
-      SubnetId: !Ref Subnet
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      InstanceType: c6i.large
       PrivateIpAddress: "192.168.0.11"
-      KeyName: !Ref KeyPairName
-      BlockDeviceMappings:
-        - DeviceName: /dev/sda1
-          Ebs:
-            VolumeSize: 20
-            VolumeType: gp3
       Tags:
         - Key: Name
           Value: isucon11-qualify-1
@@ -109,18 +113,10 @@ Resources:
   QualifyInstance2:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0088b181798171356
-      InstanceType: c5.large
-      SecurityGroupIds:
-        - !Ref SecurityGroup
-      SubnetId: !Ref Subnet
-      PrivateIpAddress: "192.168.0.12"
-      KeyName: !Ref KeyPairName
-      BlockDeviceMappings:
-        - DeviceName: /dev/sda1
-          Ebs:
-            VolumeSize: 20
-            VolumeType: gp3
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      InstanceType: c6i.large
       Tags:
         - Key: Name
           Value: isucon11-qualify-2
@@ -132,18 +128,11 @@ Resources:
   QualifyInstance3:
     Type: AWS::EC2::Instance
     Properties:
-      ImageId: ami-0088b181798171356
-      InstanceType: c5.large
-      SecurityGroupIds:
-        - !Ref SecurityGroup
-      SubnetId: !Ref Subnet
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      InstanceType: c6i.large
       PrivateIpAddress: "192.168.0.13"
-      KeyName: !Ref KeyPairName
-      BlockDeviceMappings:
-        - DeviceName: /dev/sda1
-          Ebs:
-            VolumeSize: 20
-            VolumeType: gp3
       Tags:
         - Key: Name
           Value: isucon11-qualify-3
