@@ -30,6 +30,6 @@ curl https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh >
 chmod +x ~/discord.sh
 
 # neovim
-add-apt-repository ppa:neovim-ppa/stable && apt -y install neovim
+add-apt-repository -y ppa:neovim-ppa/stable && apt -y install neovim
 git clone https://github.com/yuyamada/nvim-conf.git ~/.config/nvim
 mkdir /root/.config && ln -s ~/.config/nvim /root/.config/nvim
