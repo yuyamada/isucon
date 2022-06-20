@@ -62,11 +62,11 @@ Resources:
     Type: AWS::EC2::LaunchTemplate
     Properties:
       LaunchTemplateData:
-        InstanceMarketOptions:
-          MarketType: spot
-          SpotOptions:
-            InstanceInterruptionBehavior: stop
-            SpotInstanceType: persistent
+        # InstanceMarketOptions:
+        #   MarketType: spot
+        #   SpotOptions:
+        #     InstanceInterruptionBehavior: stop
+        #     SpotInstanceType: persistent
         ImageId: ami-0796be4f4814fc3d5
         SecurityGroupIds:
           - !Ref SecurityGroup
