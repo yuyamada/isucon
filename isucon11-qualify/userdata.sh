@@ -32,5 +32,5 @@ chmod +x $HOME/discord.sh
 
 # neovim
 add-apt-repository -y ppa:neovim-ppa/stable && apt -y install neovim
-git clone https://github.com/yuyamada/nvim-conf.git $HOME/config/nvim
+git clone https://github.com/yuyamada/nvim-conf.git $HOME/.config/nvim
 mkdir /root/.config && ln -s $HOME/config/nvim /root/.config/nvim
