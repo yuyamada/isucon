@@ -23,7 +23,7 @@ tar -zxvf alp.tar.gz
 install ./alp /usr/loal/bin
 
 # newrelic
-curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo NEW_RELIC_API_KEY={:-fillme} NEW_RELIC_ACCOUNT_ID={:-fillme} /usr/local/bin/newrelic install
+curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo NEW_RELIC_API_KEY={:-fillme} NEW_RELIC_ACCOUNT_ID={:-fillme} /usr/local/bin/newrelic install -y
 
 # discord.sh
 apt -y install jq
