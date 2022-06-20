@@ -24,6 +24,9 @@ install ./alp /usr/loal/bin
 # newrelic
 curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo /usr/local/bin/newrelic install
 
+# discord.sh
+curl https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh > /home/ubuntu/discord.sh
+
 # neovim
 add-apt-repository ppa:neovim-ppa/stable && apt -y install neovim
 git clone https://github.com/yuyamada/nvim-conf.git /home/ubuntu/.config/nvim
