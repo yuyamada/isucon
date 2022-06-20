@@ -1,17 +1,18 @@
 #!/bin/bash
+HOME=/home/ubuntu
 
 # ssh keys
-curl https://github.com/yuyamada.keys >> ~/.ssh/authorized_keys
-curl https://github.com/soya2222.keys >> ~/.ssh/authorized_keys
-curl https://github.com/yutaro-t.keys >> ~/.ssh/authorized_keys
+curl https://github.com/yuyamada.keys >> $HOME/ssh/authorized_keys
+curl https://github.com/soya2222.keys >> $HOME/ssh/authorized_keys
+curl https://github.com/yutaro-t.keys >> $HOME/ssh/authorized_keys
 
 # tool installation
 apt update
 
 # query-digester
 apt -y install percona-toolkit
-git clone https://github.com/kazeburo/query-digester.git ~/query-digester
-cd ~/query-digester && install query-digester /usr/local/bin
+git clone https://github.com/kazeburo/query-digester.git $HOME/query-digester
+cd $HOME/query-digester && install query-digester /usr/local/bin
 
 # dstat
 apt -y install dstat
@@ -26,10 +27,10 @@ curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh |
 
 # discord.sh
 apt -y install jq
-curl https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh > ~/discord.sh
-chmod +x ~/discord.sh
+curl https://raw.githubusercontent.com/ChaoticWeg/discord.sh/master/discord.sh > $HOME/discord.sh
+chmod +x $HOME/discord.sh
 
 # neovim
 add-apt-repository -y ppa:neovim-ppa/stable && apt -y install neovim
-git clone https://github.com/yuyamada/nvim-conf.git ~/.config/nvim
-mkdir /root/.config && ln -s ~/.config/nvim /root/.config/nvim
+git clone https://github.com/yuyamada/nvim-conf.git $HOME/config/nvim
+mkdir /root/.config && ln -s $HOME/config/nvim /root/.config/nvim
