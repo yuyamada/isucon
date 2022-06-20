@@ -21,9 +21,6 @@ wget https://github.com/tkuchiki/alp/releases/download/v1.0.9/alp_linux_amd64.ta
 tar -zxvf alp.tar.gz
 install ./alp /usr/loal/bin
 
-# netdata
-# curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh
-
 # newrelic
 curl -Ls https://download.newrelic.com/install/newrelic-cli/scripts/install.sh | bash && sudo /usr/local/bin/newrelic install
 
